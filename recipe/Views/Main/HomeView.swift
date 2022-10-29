@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
-    var body: some View {
+    var body: some View {   
         NavigationView {
-            Text("My Recipes")
-                .navigationTitle("My Recipes")
+            ScrollView (showsIndicators: false ) {
+                RecipeList(recipes: Recipe.all)
+            }
+            .navigationTitle("My Recipes")
         }
         .navigationViewStyle(.stack)
     }
