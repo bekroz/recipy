@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RecipeCard: View {
+    @EnvironmentObject var recipesVM: RecipesViewModel
+    
     var recipe: Recipe
     
     var body: some View {

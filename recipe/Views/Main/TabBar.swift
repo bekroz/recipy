@@ -19,10 +19,14 @@ struct TabBar: View {
                 .tabItem {
                     Label("Categories", systemImage: "square.fill.text.grid.1x2")
                 }
-            
             NewRecipeView()
                 .tabItem {
                     Label("New", systemImage: "plus")
+            }
+            
+            NewRecipeView()
+                .tabItem {
+                    Label("Favorites", systemImage: "heart")
                 }
             
             FavoritesView()
@@ -41,5 +45,6 @@ struct TabBar: View {
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
+            .environmentObject(RecipesViewModel())
     }
 }
